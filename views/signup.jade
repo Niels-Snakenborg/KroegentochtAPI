@@ -1,0 +1,16 @@
+extends layout
+
+block content
+    #center
+        img(id='imgLogo', src='/images/logo.png')
+        p Create an account
+        if (message.length > 0)
+            p(id='txtErrorMessage') #{message}
+        form(action='/signup',method='post')
+            input(id='txtUsername',type='text',value='',placeholder='username',name='username', required=true)
+            br
+            input(id='txtPassword',type='password',value='',placeholder='password',name='password', required=true)
+            br
+            input(id='btnSignIn', type='submit',value='Sign up')
+        a(id='aSubButton', href='/login_page') Already an account?
+

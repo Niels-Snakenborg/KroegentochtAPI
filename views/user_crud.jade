@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    #popup
+        input(id='txtUsername',type='text',value='',placeholder='username',name='username', required=true)
+        br
+        input(id='txtPassword',type='text',value='',placeholder='password',name='password', required=true)
+        br
+        select(id='txtRole')
+            option(value='admin') admin
+            option(value='user') user
+        a(class='aPopupButton' id='aSaveUser') Save
+        a(class='aPopupButton' id='sCancel') Cancel
+
+    img(id='imgLogo', src='/images/logo.png')
+    #profile
+        a(href='/logout')
+            p #{user.username}
+            img(id='imgProfile', src='/images/user.png')
+            p(id='pLogout') Click to logout
+    h1 User Crud
+    img(id='imgAddUser', src='/images/add.png', class='imgAdd')
+    table(id='tableUsers', class='table')

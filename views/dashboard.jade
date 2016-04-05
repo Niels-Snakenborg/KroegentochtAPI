@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    img(id='imgLogo', src='/images/logo.png')
+    #profile
+        a(href='/logout')
+            p #{user.username}
+            img(id='imgProfile', src='/images/user.png')
+            p(id='pLogout') Click to logout
+    if(user.role == 'admin')
+        a(id='aAdmin', href='/admin') Admin Panel
+    h1 Races
+    table(id='tableRaces', class='table')
+

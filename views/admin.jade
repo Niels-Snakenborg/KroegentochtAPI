@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    if(user.role == 'admin')
+        img(id='imgLogo', src='/images/logo.png')
+        #profile
+            a(href='/logout')
+                p #{user.username}
+                img(id='imgProfile', src='/images/user.png')
+                p(id='pLogout') Click to logout
+        h1 Admin Panel
+        a(href='/admin/user_crud', class='aButton') User Crud
+        a(href='/admin/race_crud', class='aButton') Race Crud
+
+

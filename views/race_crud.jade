@@ -1,0 +1,51 @@
+extends layout
+
+block content
+    #popup
+        input(id='txtName',type='text',value='',placeholder='name',name='name', required=true)
+        br
+        input(id='txtStartDate',type='date',value='',placeholder='start',name='start_date', required=true)
+        br
+        input(id='txtStartTime',type='time',value='',placeholder='start time',name='start_time', required=true)
+        br
+        input(id='txtDescription',type='text',value='',placeholder='description',name='description', required=true)
+        br
+        a(class='aPopupButton' id='aSaveRace') Save
+        a(class='aPopupButton' id='sCancel') Cancel
+    #popupWaypoints
+        #search
+            h2 Search waypoints
+            input(id='txtLat',type='text',value='',placeholder='location latitude',name='location_latitude', required=true)
+            br
+            input(id='txtLong',type='text',value='',placeholder='location longitude',name='location_longitude', required=true)
+            br
+            input(id='txtRadius',type='number',value='',placeholder='radius in m',name='radius', required=true)
+            a(class='aPopupButton' id='aSearch') Search
+            br
+        #add
+            h2 Add Waypoints to Race
+            select(id='txtSelectedWaypoint')
+            a(class='aPopupButton' id='aAddWaypoint') Add
+        #table
+            h2 Waypoints in Race
+            table(id='tableWaypoints',class='table')
+            a(class='aPopupButton' id='aCancel') Close
+    #popupActions
+        a(href='#', id='aReadyRace', class='aButton') Race Ready
+        a(href='#', id='aStartRace', class='aButton') Start Race
+        a(href='#', id='aEndRace', class='aButton') Stop Race
+        p(style='float: left') Current Cafe
+        select(id='txtCurrentCafe')
+        a(class='aPopupButton' id='aSaveCurrentRace') Save
+        a(class='aPopupButton' id='sCancelActions') Cancel
+    img(id='imgLogo', src='/images/logo.png')
+    #profile
+        a(href='/logout')
+            p #{user.username}
+            p(id='pUserId') #{user._id}
+            img(id='imgProfile', src='/images/user.png')
+            p(id='pLogout') Click to logout
+    h1 Race Crud
+    img(id='imgAddRace', src='/images/add.png', class='imgAdd')
+    table(id='tableRacesCrud', class='table')
+

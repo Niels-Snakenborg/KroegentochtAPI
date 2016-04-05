@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  #center
+    img(id='imgLogo', src='/images/logo.png')
+    p Please login to continue
+    if (message.length > 0)
+      p(id='txtErrorMessage') #{message}
+    form(action='/login',method='post')
+      input(id='txtUsername',type='text',value='',placeholder='username',name='username', required=true)
+      br
+      input(id='txtPassword',type='password',value='',placeholder='password',name='password', required=true)
+      br
+      input(id='btnSignIn', type='submit',value='Login')
+    a(id='aSubButton', href='/signup') No account?
+
