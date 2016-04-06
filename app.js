@@ -12,7 +12,7 @@ var session         = require('express-session');
 var flash           = require('connect-flash');
 var passport        = require('passport');
 var auth            = require('./modules/auth');
-var port            = process.env.PORT || 80;
+var port            = process.env.PORT || 15770;
 
 // CONFIG =====================================================================================================
 // Database connectie
