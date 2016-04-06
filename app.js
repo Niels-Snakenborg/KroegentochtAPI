@@ -12,7 +12,6 @@ var session         = require('express-session');
 var flash           = require('connect-flash');
 var passport        = require('passport');
 var auth            = require('./modules/auth');
-var port            = process.env.PORT || 5000;
 
 // CONFIG =====================================================================================================
 // Database connectie
@@ -24,6 +23,8 @@ mongoose.connect(DBconfig.url);
 require('./config/passport')(passport)
 
 // Server
+var port = normalizePort(process.env.PORT || '5000');
+app.set('port', port)
 server.listen(port);
 app.set("io", io);
 
