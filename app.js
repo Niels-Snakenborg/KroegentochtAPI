@@ -23,7 +23,7 @@ mongoose.connect(DBconfig.url);
 require('./config/passport')(passport)
 
 // Server
-var port = normalizePort(process.env.PORT || '5000');
+var port = process.env.PORT || '5000';
 app.set('port', port)
 server.listen(port);
 app.set("io", io);
