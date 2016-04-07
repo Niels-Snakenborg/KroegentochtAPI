@@ -10,8 +10,7 @@ $(document).ready(function() {
         populateCafeTable();
     }
 
-    var host = 'wss://kroegentochtncsnaken.herokuapp.com/';
-    /*SOCKET = io.connect(host);
+    SOCKET = io.connect();
     SOCKET.on('RaceUpdate', function (data) {
         RACEID = data.id;
         populateCafeTable();
@@ -20,19 +19,7 @@ $(document).ready(function() {
     SOCKET.on('CheckinUpdate', function (data) {
         CURRENTCAFE = data.id;
         populateCheckinTable();
-    })*/
-    
-    var ws = new WebSocket(host);
-    ws.RaceUpdate = function (event) {
-        RACEID = event.data.id;
-        populateCafeTable();
-        populateInfo();
-    };
-    
-    ws.CheckinUpdate = function (event) {
-        CURRENTCAFE = event.data.id;
-        populateCheckinTable();
-    };
+    })
 });
 
 function populateCafeTable(){
