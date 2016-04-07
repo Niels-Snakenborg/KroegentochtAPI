@@ -10,7 +10,7 @@ $(document).ready(function() {
         populateCafeTable();
     }
 
-    var host = location.origin.replace(/^http/, 'ws')
+    var host = 'https://kroegentochtncsnaken.herokuapp.com/';
     /*SOCKET = io.connect(host);
     SOCKET.on('RaceUpdate', function (data) {
         RACEID = data.id;
