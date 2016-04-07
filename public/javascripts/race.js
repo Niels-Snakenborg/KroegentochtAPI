@@ -10,7 +10,8 @@ $(document).ready(function() {
         populateCafeTable();
     }
 
-    SOCKET = io.connect('/');
+    var host = location.origin.replace(/^http/, 'ws')
+    SOCKET = io.connect(host);
     SOCKET.on('RaceUpdate', function (data) {
         RACEID = data.id;
         populateCafeTable();
