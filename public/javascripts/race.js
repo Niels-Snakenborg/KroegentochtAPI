@@ -10,7 +10,7 @@ $(document).ready(function() {
         populateCafeTable();
     }
 
-    SOCKET = io.connect();
+    /*SOCKET = io.connect();
     SOCKET.on('RaceUpdate', function (data) {
         RACEID = data.id;
         populateCafeTable();
@@ -19,7 +19,7 @@ $(document).ready(function() {
     SOCKET.on('CheckinUpdate', function (data) {
         CURRENTCAFE = data.id;
         populateCheckinTable();
-    })
+    })*/
 });
 
 function populateCafeTable(){
